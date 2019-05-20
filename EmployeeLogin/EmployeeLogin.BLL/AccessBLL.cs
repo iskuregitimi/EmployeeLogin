@@ -17,7 +17,7 @@ namespace EmployeeLogin.BLL
             }
 
             EmployeeLoginDataContext dataContext = new EmployeeLoginDataContext();
-            var employee = dataContext.Employee.Where(e => e.Email == username && e.Password == password).FirstOrDefault();
+            var employee = dataContext.Employee.FirstOrDefault(e => e.Email == username && e.Password == password);
             return employee;
         }
 
