@@ -23,8 +23,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
-                    <li>@Html.ActionLink("AddCustomer", "AddCustomer", "Customer")</li>
+
                     @if (Session["Employee"] == null)
                     {
                         <li>@Html.ActionLink("Login", "Index", "Login")</li>
@@ -33,6 +32,8 @@
                     {
                         <li>@Html.ActionLink("Siparişlerim", "Index", "Order")</li>
                         <li>@Html.ActionLink("Profilim", "UserDetails", "Employee")</li>
+                        <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
+                        <li>@Html.ActionLink("AddCustomer", "AddCustomer", "Customer")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
 
                     }

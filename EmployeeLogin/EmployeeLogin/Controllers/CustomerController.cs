@@ -16,11 +16,14 @@ namespace EmployeeLogin.Controllers
             List<Customer> customerList = CustomerBLL.GetCustomers();
             return View(customerList);
         }
+        [HttpGet]
         public ActionResult  AddCustomer()
         {
             Customer model = new Customer();
             return View(model);
         }
+
+        [HttpPost]
         public ActionResult InsertCustomer(Customer model)
         {
             CustomerBLL.InsertCustomer(model);
