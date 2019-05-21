@@ -9,10 +9,19 @@ namespace EmployeeLogin.DAL
     [Table("Role")]
     public partial class Role
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
+        {
+            EmployeeRole = new HashSet<EmployeeRole>();
+        }
+
         public int RoleID { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(50)]
         public string Name { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EmployeeRole> EmployeeRole { get; set; }
     }
 }

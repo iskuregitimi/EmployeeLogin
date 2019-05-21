@@ -12,27 +12,40 @@ namespace EmployeeLogin.DAL
         {
         }
 
+        public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<EmployeeRole> EmployeeRole { get; set; }
+        public virtual DbSet<Leads> Leads { get; set; }
+        public virtual DbSet<Note> Note { get; set; }
         public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>()
-                .Property(e => e.Name)
-                .IsUnicode(false);
+            modelBuilder.Entity<Customer>()
+                .HasMany(e => e.Leads)
+                .WithRequired(e => e.Customer)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Customer>()
+                .HasMany(e => e.Note)
+                .WithRequired(e => e.Customer)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Employee>()
-                .Property(e => e.Email)
-                .IsUnicode(false);
+                .HasMany(e => e.EmployeeRole)
+                .WithRequired(e => e.Employee)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Employee>()
-                .Property(e => e.Password)
-                .IsUnicode(false);
+                .HasMany(e => e.Leads)
+                .WithRequired(e => e.Employee)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Role>()
-                .Property(e => e.Name)
-                .IsFixedLength();
+                .HasMany(e => e.EmployeeRole)
+                .WithRequired(e => e.Role)
+                .WillCascadeOnDelete(false);
         }
     }
 }

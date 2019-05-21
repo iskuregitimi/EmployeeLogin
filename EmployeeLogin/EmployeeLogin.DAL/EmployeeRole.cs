@@ -14,5 +14,9 @@ namespace EmployeeLogin.DAL
         public int EmployeeID { get; set; }
 
         public int RoleID { get; set; }
+
+        public virtual Employee Employee { get; set; }
+
+        public virtual Role Role { get; set; }
     }
 }
