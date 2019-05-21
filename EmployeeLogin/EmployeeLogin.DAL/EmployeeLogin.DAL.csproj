@@ -60,5 +60,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeLogin.Entity\EmployeeLogin.Entity.csproj">
+      <Project>{300b5243-9f34-4bc2-8ab7-dccb23eab1db}</Project>
+      <Name>EmployeeLogin.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -132,6 +132,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -182,6 +183,8 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Home\Hata.cshtml" />
     <Content Include="Views\Employee\UserDetails.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\AddCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -207,6 +210,10 @@
     <ProjectReference Include="..\EmployeeLogin.DAL\EmployeeLogin.DAL.csproj">
       <Project>{93591a31-3ece-4db6-a139-9b186d567b39}</Project>
       <Name>EmployeeLogin.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeLogin.Entity\EmployeeLogin.Entity.csproj">
+      <Project>{300b5243-9f34-4bc2-8ab7-dccb23eab1db}</Project>
+      <Name>EmployeeLogin.Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

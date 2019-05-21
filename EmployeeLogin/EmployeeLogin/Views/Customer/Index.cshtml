@@ -1,0 +1,58 @@
+﻿@using EmployeeLogin.Entity
+@model List<Customer>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Customer List</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <table>
+
+        <tr>
+            <th>CustomerID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Birtday </th>
+            <th>AdressID</th>
+            <th>TelefonID</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerID</td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.Birtday</td>
+                <td>@item.AdressID</td>
+                <td>@item.TelefonID</td>
+            </tr>
+
+        }
+    </table>
+
+
+</body>
+</html>

@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C71C4359-22A6-40A4-B14D-83135705632F}</ProjectGuid>
+    <ProjectGuid>{300B5243-9F34-4BC2-8AB7-DCCB23EAB1DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmployeeLogin.BLL</RootNamespace>
-    <AssemblyName>EmployeeLogin.BLL</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <RootNamespace>EmployeeLogin.Entity</RootNamespace>
+    <AssemblyName>EmployeeLogin.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,19 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessBLL.cs" />
-    <Compile Include="CustomerBLL.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeLoginDataContext.cs" />
+    <Compile Include="EmployeeRole.cs" />
+    <Compile Include="Phone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EmployeeLogin.DAL\EmployeeLogin.DAL.csproj">
-      <Project>{93591a31-3ece-4db6-a139-9b186d567b39}</Project>
-      <Name>EmployeeLogin.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmployeeLogin.Entity\EmployeeLogin.Entity.csproj">
-      <Project>{300b5243-9f34-4bc2-8ab7-dccb23eab1db}</Project>
-      <Name>EmployeeLogin.Entity</Name>
-    </ProjectReference>
+    <Compile Include="Role.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
