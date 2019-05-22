@@ -1,5 +1,6 @@
 ﻿using EmployeeLogin.BLL;
 using EmployeeLogin.DAL;
+using EmployeeLogin.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,11 @@ namespace EmployeeLogin.Controllers
 {
     public class OrderController : Controller
     {
+        [MyAuthenticationFilter]
         // GET: Order
         public ActionResult Index()
         {
-            if (Session["Employee"] == null)
-            {
-                return RedirectToAction("Hata", "Home");
-            }
+           
 
             var employee = Session["Employee"] as Employee;
 
