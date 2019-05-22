@@ -1,10 +1,19 @@
-﻿
+﻿@using EmployeeLogin.DAL
+
 @{
     ViewBag.Title = "Homepage";
     Layout = "~/Views/Shared/_LayoutPageHome.cshtml";
 }
 
-<div class="content-wrapper" >
+@{
+    Employee employee = null;
+    if (Session["Employee"] != null)
+    {
+        employee = Session["Employee"] as Employee;
+    }
+}
+
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header ">
         <h1>
@@ -58,17 +67,19 @@
                 <!-- /.info-box -->
             </div>
             <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">New Members</span>
-                        <span class="info-box-number">2,000</span>
+            <a class="pos-relative h-100 dplay-block" href="/Customer/AddCustomer">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">New Members</span>
+                            <span class="info-box-number">2,000</span>
+                        </div>
+                        <!-- /.info-box-content -->
                     </div>
-                    <!-- /.info-box-content -->
+                    <!-- /.info-box -->
                 </div>
-                <!-- /.info-box -->
-            </div>
+            </a>
             <!-- /.col -->
         </div>
         <!-- /.row -->

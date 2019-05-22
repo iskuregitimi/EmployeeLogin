@@ -1,4 +1,6 @@
-﻿using EmployeeLogin.UI.Web.Models;
+﻿using EmployeeLogin.BLL;
+using EmployeeLogin.DAL;
+using EmployeeLogin.UI.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,19 +18,18 @@ namespace EmployeeLogin.UI.Web.Controllers
         }
         public ActionResult LoginCRM(LoginModel model)
         {
-            //var employee = AccessBLL.LoginUser(model.UserName, model.Password);
+            Employee employee = AccessBLL.LoginUser(model.UserName, model.Password);
 
-            //if (employee == null)
-            //{
-            //    TempData["Hata"] = "Kullanıcı bulunamadı";
-            //    return RedirectToAction("Index");
-            //}
-            //else
-            //{
-            //    Session["Employee"] = employee;
-            //    return RedirectToAction("Index", "Home");
-            //}
-            return RedirectToAction("Homepage","Home");
+            if (employee == null)
+            {
+                TempData["Hata"] = "Kullanıcı bulunamadı";
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                Session["Employee"] = employee;
+                return RedirectToAction("Homepage", "Home");
+            }
 
         }
     }

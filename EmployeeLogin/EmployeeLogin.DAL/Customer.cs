@@ -6,35 +6,48 @@ namespace EmployeeLogin.DAL
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Employee")]
-    public partial class Employee
+    [Table("Customer")]
+    public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employee()
+        public Customer()
         {
             Leads = new HashSet<Lead>();
             Nots = new HashSet<Not>();
-            RolEmployees = new HashSet<RolEmployee>();
         }
 
-        public int EmployeeId { get; set; }
+        public int CustomerId { get; set; }
 
         [StringLength(50)]
-        public string Username { get; set; }
+        public string Adı { get; set; }
 
         [StringLength(50)]
-        public string Password { get; set; }
+        public string Soyadı { get; set; }
+
+        public DateTime? Doğumtarihi { get; set; }
+
+        [StringLength(11)]
+        public string Telno { get; set; }
+
+        [StringLength(11)]
+        public string Telno2 { get; set; }
 
         [StringLength(50)]
-        public string Name { get; set; }
+        public string Email { get; set; }
+
+        [StringLength(50)]
+        public string Email2 { get; set; }
+
+        [StringLength(200)]
+        public string Adress { get; set; }
+
+        [StringLength(200)]
+        public string Adress2 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Lead> Leads { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Not> Nots { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RolEmployee> RolEmployees { get; set; }
     }
 }
