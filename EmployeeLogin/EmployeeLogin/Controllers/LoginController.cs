@@ -1,4 +1,5 @@
 ﻿using EmployeeLogin.BLL;
+using EmployeeLogin.Filters;
 using EmployeeLogin.Models;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace EmployeeLogin.Controllers
         }
 
 
-
+        [MyAuthenticationFilter]
         public ActionResult Logout()
         {
             Session["Employee"] = null;
