@@ -28,5 +28,10 @@ namespace EmployeeLogin.BLL
             context.Customers.Add(customer);
             context.SaveChanges();
         }
+
+        public static int getNumberOfCustomers()
+        {
+            return context.Customers.Count();
+        }
     }
 }

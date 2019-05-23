@@ -1,5 +1,6 @@
 ﻿using EmployeeLogin.BLL;
 using EmployeeLogin.DAL;
+using EmployeeLogin.UI.Web.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +17,23 @@ namespace EmployeeLogin.UI.Web.Controllers
             return View();
         }
 
+        [MyAuthenticationFilter]
         public ActionResult AddCustomer()
         {
             return View();
         }
 
+        [MyAuthenticationFilter]
         public ActionResult SaveCustomer(Customer model)
         {
             CustomerBLL.SaveCustomer(model);
             return RedirectToAction("Homepage", "Home");
+        }
+
+        [MyAuthenticationFilter]
+        public ActionResult getAllCustomers()
+        {
+            return View();
         }
     }
 }

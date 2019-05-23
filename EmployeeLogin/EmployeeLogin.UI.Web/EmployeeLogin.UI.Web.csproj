@@ -6363,6 +6363,7 @@
     <Content Include="Content\build\js\TodoList.js" />
     <Content Include="Content\build\js\Tree.js" />
     <Content Include="Content\css\AddCustomer.css" />
+    <Content Include="Content\css\CustomerList.css" />
     <Content Include="Content\dist\css\AdminLTE.css" />
     <Content Include="Content\dist\css\AdminLTE.min.css" />
     <Content Include="Content\dist\css\alt\AdminLTE-bootstrap-social.css" />
@@ -7311,6 +7312,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Customer\AddCustomer.cshtml" />
+    <Content Include="Views\Customer\getAllCustomers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

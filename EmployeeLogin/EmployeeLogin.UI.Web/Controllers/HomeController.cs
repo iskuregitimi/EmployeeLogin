@@ -1,4 +1,5 @@
-﻿using EmployeeLogin.UI.Web.Filters;
+﻿using EmployeeLogin.BLL;
+using EmployeeLogin.UI.Web.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace EmployeeLogin.UI.Web.Controllers
         [MyAuthenticationFilter]
         public ActionResult Homepage()
         {
+            ViewBag.number = CustomerBLL.getNumberOfCustomers();
             return View();
         }
 
