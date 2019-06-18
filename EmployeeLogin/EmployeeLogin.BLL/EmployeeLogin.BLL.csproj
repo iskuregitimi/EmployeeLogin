@@ -49,7 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessBLL.cs" />
+    <Compile Include="AdressBLL.cs" />
     <Compile Include="CustomerBLL.cs" />
+    <Compile Include="MailBLL.cs" />
+    <Compile Include="PhoneBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

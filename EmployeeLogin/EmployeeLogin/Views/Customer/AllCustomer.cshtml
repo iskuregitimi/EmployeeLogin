@@ -7,7 +7,7 @@
 <h2>AllCustomer</h2>
 
 <p>
-    @Html.ActionLink("Yeni Müşteri", "AddCustomer","Customer")
+    @Html.ActionLink("Yeni Müşteri", "AddCustomer", "Customer")
 </p>
 <table class="table">
     <tr>
@@ -15,20 +15,16 @@
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SurName)
+            @Html.DisplayNameFor(model => model.Surname)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.BirthDate)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Company)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Address)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Phone)
         </th>
@@ -38,38 +34,61 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SurName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BirthDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Company)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+
+            <td>
+
+                <table>
+                    @foreach (var Address in item.Address)
+                    {
+                        <tr>
+                            <td> @Address.Address1 </td>
+                        </tr>
+                    }
+
+                </table>
+            </td>
+
+            <td>
+                <table>
+                    @foreach (var Phone in item.Phone)
+                    {
+                        <tr>
+                            <td> @Phone.Phone1 </td>
+                        </tr>
+                    }
+
+                </table>
+            </td>
+            <td>
+
+                <table>
+                    @foreach (var Email in item.Email)
+                    {
+                        <tr>
+                            <td> @Email.Email1 </td>
+                        </tr>
+                    }
+
+                </table>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })
+            </td>
+        </tr>
+    }
 
 </table>

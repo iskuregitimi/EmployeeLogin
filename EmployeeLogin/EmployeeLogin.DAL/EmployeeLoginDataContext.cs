@@ -12,11 +12,14 @@ namespace EmployeeLogin.DAL
         {
         }
 
+        public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
+        public virtual DbSet<Email> Email { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<EmployeeRole> EmployeeRole { get; set; }
         public virtual DbSet<Leads> Leads { get; set; }
         public virtual DbSet<Note> Note { get; set; }
+        public virtual DbSet<Phone> Phone { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
@@ -41,6 +44,10 @@ namespace EmployeeLogin.DAL
                 .HasMany(e => e.Leads)
                 .WithRequired(e => e.Employee)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Phone>()
+                .Property(e => e.Phone1)
+                .IsFixedLength();
 
             modelBuilder.Entity<Role>()
                 .HasMany(e => e.EmployeeRole)

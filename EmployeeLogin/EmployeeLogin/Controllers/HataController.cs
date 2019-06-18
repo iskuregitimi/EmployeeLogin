@@ -6,12 +6,9 @@ using System.Web.Mvc;
 
 namespace EmployeeLogin.Controllers
 {
-    public class HomeController : Controller
+    public class HataController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
+        
 
        
         public ActionResult Hata()

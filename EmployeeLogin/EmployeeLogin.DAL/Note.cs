@@ -18,8 +18,8 @@ namespace EmployeeLogin.DAL
         public string Note1 { get; set; }
 
         [Required]
+        [StringLength(20)]
         public string Status { get; set; }
-
 
         public virtual Customer Customer { get; set; }
     }
